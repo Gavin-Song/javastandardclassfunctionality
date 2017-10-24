@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Java Class Generator</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/util.js"></script>
+        <script src="js/code_generator.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/ui.js" defer='defer'></script>
+
+
+    </head>
+
+    <body>
+        <div id="form">
+            <div id="error">
+            </div>
+
+            <h2>Class Data</h2>
+            <label class="label">Class Name</label>
+            <input id="name" type='text'></input>
+            <br>
+
+            <label class="label">Package</label>
+            <input id="package" type='text'></input>
+            <br>
+
+            <label class="label">Description</label>
+            <input id="desc" type='text'></input>
+
+            <br>
+            <h2>Generator Options</h2>
+
+            <label class="control control-checkbox">
+                Constructor
+                    <input type="checkbox" id="constructor" checked></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <label class="control control-checkbox">
+                Comments
+                    <input type="checkbox" id="comments" checked></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <label class="control control-checkbox">
+                main()
+                    <input type="checkbox" id="main"></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <label class="control control-checkbox">
+                Abstract class
+                    <input type="checkbox" id="abstract"></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <label class="control control-checkbox">
+                Use java.util.Arrays
+                    <input type="checkbox" id="arrays" checked></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <label class="control control-checkbox">
+                Automatically make variables private
+                    <input type="checkbox" id="private" checked></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <label class="control control-checkbox">
+                Group variables by type
+                    <input type="checkbox" id="group" checked></input>
+                <div class="control_indicator"></div>
+            </label>
+
+            <br>
+            <h2>Instance Variables</h2>
+            <div id="vars">
+                <input placeholder="Type" type='text' class='width_30_percent' id="var_type"></input>
+                <input placeholder="Name" type='text' class='width_30_percent' id="var_name"></input>
+
+                <label class="control control-checkbox checkbox_inline">
+                    Read only
+                        <input id="var_access" type="checkbox"></input>
+                    <div class="control_indicator"></div>
+                </label>
+                <button onclick='addInstancevar()'>Add</button>
+            </div>
+
+            <br>
+            <table style="width:90%" id="var_display">
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Read only</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+
+        <pre><code id="code" class="java"></code></pre>
+
+        <script>hljs.initHighlightingOnLoad();</script>
+
+    </body>
+</html>
