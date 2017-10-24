@@ -17,7 +17,7 @@ Internet connection (To load some fonts and files)
 First, clone the git repo to your desktop.
 
 ```
-git clone [REPO HERE]
+git clone https://github.com/Gavin-Song/javastandardclassfunctionality
 ```
 
 Then open it up and run index.html
